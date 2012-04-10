@@ -1,0 +1,12 @@
+﻿db.users.find({ "likes.content" : { "$all" : [/arkan/i, /eyonc/i] } }).limit(50);
+
+////i insenstive anlamında kullanılmış
+db.people.find({"last_name":/osk/i});
+
+////local database'i kullanır
+use local
+
+
+
+////index atma
+db.users.ensureIndex({"likes.content": 1})
